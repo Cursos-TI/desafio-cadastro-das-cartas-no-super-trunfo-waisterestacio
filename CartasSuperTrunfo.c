@@ -7,12 +7,19 @@
 
 int main() {
     // Definindo as variáveis da carta
+    char estado[30] = "";
     int codigo = 0;
     char nome[50] = "";
     int populacao = 0;
     float area = 0.0;
     float pib = 0.0;
     int pontos = 0;
+    float densidadePopulacional = 0.0;
+    float pibPerCapta = 0.0;
+    
+    // Solicitando para o usuário informar o estado
+    printf("Insira o estado: ");
+    scanf("%s", &estado);
     
     // Solicitando para o usuário informar o código da cidade
     printf("Insira o código da cidade: ");
@@ -37,15 +44,24 @@ int main() {
     // Solicitando para o usuário informar o número de pontos turísticos da cidade
     printf("Insira o número de pontos turísticos da cidade: ");
     scanf("%d", &pontos);
-    
-    // Exibição dos Dados das Cartas:
-    printf(":: Informações da carta ::");
+
+    // Calcula a densidade populacional
+    densidadePopulacional = populacao / area;
+
+    // Calcula o PIB per capita
+    pibPerCapta = pib / populacao;
+
+    // Exibição dos dados da carta:
+    printf("*** Informações da carta ***\n");
+    printf("- Estado: %s\n", estado);
     printf("- Código: %d\n", codigo);
-    printf("- Nome: %s\n", nome);
+    printf("- Nome da Cidade: %s\n", nome);
     printf("- População: %d\n", populacao);
     printf("- Área: %.2f\n", area);
     printf("- PIB: %.2f\n", pib);
-    printf("- Pontos turísticos: %d\n", pontos);
+    printf("- Número de Pontos Turísticos: %d\n", pontos);
+    printf("- Densidade Populacional: %.2f hab/km²\n", densidadePopulacional);
+    printf("- PIB per Capita: %.2f reais\n", pibPerCapta);
 
     // Finalizando a execução
     return 0;
