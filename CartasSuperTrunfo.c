@@ -12,7 +12,7 @@ int compararAtributo(int atributo, int carta1_int, int carta2_int, float carta1_
     }
 }
 
-// 
+// Função para descobrir o nome da opção pelo código
 const char* opcaoNome(int opcao) {
     switch (opcao) {
         case 1: return "População";
